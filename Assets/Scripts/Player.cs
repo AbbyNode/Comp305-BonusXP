@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 	public float maxSpeed = 8;
@@ -19,7 +20,7 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		if (health <= 0) {
-			
+			// SceneManager.LoadScene(1);
 		}
 
 		float moveX = Input.GetAxis("Horizontal");
