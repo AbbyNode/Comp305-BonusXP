@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
 
 	void Update() {
 		if (health <= 0) {
-			// TODO: Die
+			
 		}
 
 		float moveX = Input.GetAxis("Horizontal");
@@ -29,13 +29,11 @@ public class Player : MonoBehaviour {
 			Vector2 moveVec2 = rBody.position + (new Vector2(moveVec3.x, moveVec3.y));
 
 			rBody.velocity = new Vector2(moveAmt * maxSpeed, rBody.velocity.y);
-			//			rBody.MovePosition(moveVec2);
 		}
 
 		bool moveY = Input.GetButton("Vertical");
 
 		if (moveY && nextJumpTime <= Time.time) {
-			Debug.Log(nextJumpTime + " " + Time.time);
 			rBody.AddForce(new Vector2(0, jumpForce));
 			nextJumpTime = Time.time + jumpDelay;
 		}
